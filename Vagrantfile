@@ -13,10 +13,10 @@ exec su -c /tmp/setup-all-in-one.sh -l ubuntu
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-16.04"
   config.vm.network "private_network", ip: "192.168.33.10"
-  config.vm.provider "virtualbox" do |vb|
-    vb.memory = "1536"
+  config.vm.provider "hyperv" do |h|
+    h.memory = "1536"
   end
   config.vm.provision "file", source: "install/setup-host.sh", destination: "/tmp/setup-host.sh"
   config.vm.provision "file", source: "install/setup-all-in-one.sh", destination: "/tmp/setup-all-in-one.sh"

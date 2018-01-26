@@ -3,6 +3,16 @@ MicroFlack's Administration Scripts
 
 This repository contains installation and administration scripts for MicroFlack.
 
+Getting Started
+----------------
+Make sure Hyper-V is installed and enabled on your hardware.
+
+I have switched the vagran file to use bento/ubuntu-16.04 which supports the hyperv provider so you should be able to start by cd'ing to the microflack_admin dir and running:
+
+```
+vagrant up --provider=hyperv
+```
+
 Environment variables used by microservices
 -------------------------------------------
 
