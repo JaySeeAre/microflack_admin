@@ -9,12 +9,16 @@ chmod +x /tmp/setup-host.sh /tmp/setup-all-in-one.sh
 /tmp/setup-host.sh
 
 # install microflack (run as user ubuntu)
-exec su -c /tmp/setup-all-in-one.sh -l ubuntu
+exec su -c /tmp/setup-all-in-one.sh -l vagrant
 SCRIPT
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "bento/ubuntu-16.04"
+  # config.vm.box = "ubuntu/xenial64" # VirtualBox#
+  config.vm.box = "bento/ubuntu-16.04" # Hyperv but no ubuntu user.
   config.vm.network "private_network", ip: "192.168.33.10"
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "1536"
+  end
   config.vm.provider "hyperv" do |h|
     h.memory = "1536"
   end

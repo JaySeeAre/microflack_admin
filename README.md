@@ -57,3 +57,9 @@ The path portion of the URL on which the service will be exposed by the load bal
 - HOST_IP_ADDRESS
 
 The IP address the container can use to access the Docker host. Optional.
+
+Message post install
+--------------------
+MicroFlack is now deployed!
+- Run `source ~/.profile` or log back in to update your environment.
+- You may need some variables from `/home/ubuntu/.profile` if you intend to run services in another host.
